@@ -88,16 +88,18 @@ namespace ConsoleApplication3delegate
             {
                 Console.WriteLine("信用卡开始执行委托还款。。。。。。");
                 // 请在此处添加自己的代码
+                // 实例委托类，获取当前信用卡的欠款和还款日
                 CreditCardDelegate CCD = new CreditCardDelegate();
                 CCD.billamount = card.getbillamount(); CCD.repaymentday = card.getrepaymentday();
                 
+                // 判断今天是否是还款日，不是就下一天
                 while (card.getrepaymentday() > tday)
                 {
                     ++tday;
                     Console.WriteLine("今天是{0}号，无需还款", tday);
                 }
 
-                // 还款
+                // 余额够就还款，Display函数将信用卡的信息清空，Account函数从储蓄卡划钱
                 if (depositCard.amount >= card.getbillamount())
                 {
                     CCD.PayEvent += card.Display;
@@ -107,7 +109,6 @@ namespace ConsoleApplication3delegate
                 {
                     Console.WriteLine("余额不足，无法还款\n");
                 }
-
                 Console.WriteLine("");
             }
 
