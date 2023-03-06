@@ -7,7 +7,7 @@ namespace ConsoleApplication3delegate
     class DepositCard
     {
         public int amount;
-
+// 6
         // 输出余额
         public void Display()
         {
