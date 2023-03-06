@@ -82,7 +82,7 @@ namespace ConsoleApplication3delegate
             List<CreditCard> Cards = new List<CreditCard>();
             Cards.Add(creditCard1); Cards.Add(creditCard2); Cards.Add(creditCard3);
 
-            int tday = DateTime.Today.Day;
+            int tday = 5;
 
             foreach (CreditCard card in Cards)
             {
